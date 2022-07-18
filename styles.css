@@ -1,7 +1,6 @@
 body {
     display: flex;
-    border: blue solid 2px;
-    height: 80vh;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -9,19 +8,40 @@ body {
 
 div {
     display: flex;
-    border: red solid 2px;
-    height: 100px;
-    width: 300px;
+    height: 80px;
+    width: 320px;
     justify-content: center;
     align-items: center;
     font-size: 30px;
 }
 
-button{
+button {
     display: flex;
-    height: 100px;
-    width: 300px;
+    height: 80px;
+    width: 320px;
     justify-content: center;
     align-items: center;
     font-size: 30px;
+}
+
+.answer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 40px;
+    border: black solid 1px;
+    border-radius: 5px;
+    gap: 5px;
+    /* background-color: rgb(240, 240, 240); */
+}
+
+.clear,
+.back {
+    height: 80px;
+    width: 400px;
+}
+
+.divide {
+    height: 80px;
+    width: 250px;
 }
