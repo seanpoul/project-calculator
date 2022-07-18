@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    border: blue solid 2px;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div {
+    display: flex;
+    border: red solid 2px;
+    height: 100px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+button{
+    display: flex;
+    height: 100px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
