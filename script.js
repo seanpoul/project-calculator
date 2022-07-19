@@ -7,9 +7,19 @@
 // let one = oneBtn.textContent;
 // let plus = plusBtn;
 
-// oneBtn.addEventListener('click', () => {
+// oneBtn.addEventListener('click', event => {
 //     answer.textContent += one;
+//     console.log(event);
 // })
+
+
+const clicked = document.querySelector('.calculator');
+
+clicked.addEventListener('click', event => {
+    const { target } = event;
+    const num  = target.textContent;
+    updateDisplay()
+});
 
 function add(firstOperand, secondOperand) {
     console.log(firstOperand + secondOperand);
@@ -42,7 +52,11 @@ function operate(firstOperand, secondOperand, operator) {
     }
 }
 
-function updateDisplay(){
+function updateDisplay() {
     const display = document.querySelector('.answer');
+    console.log(display)
 }
 
+function calculate() {
+
+}
