@@ -12,7 +12,6 @@
 //     console.log(event);
 // })
 
-
 const clicked = document.querySelector('.calculator');
 
 clicked.addEventListener('click', event => {

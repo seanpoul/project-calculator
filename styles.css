@@ -41,21 +41,10 @@ button {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    min-height: 50px;
+    min-height: 80px;
     font-size: 40px;
     border: black solid 1px;
     border-radius: 5px;
     padding-right: 5px;
     /* background-color: rgb(240, 240, 240); */
-}
-
-.clear,
-.back {
-    height: 80px;
-    width: 400px;
-}
-
-.divide {
-    height: 80px;
-    width: 250px;
 }
