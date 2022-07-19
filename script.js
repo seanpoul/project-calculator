@@ -12,51 +12,53 @@
 //     console.log(event);
 // })
 
+// const clicked = document.querySelector('.calculator');
 
-const clicked = document.querySelector('.calculator');
+// clicked.addEventListener('click', event => {
+//     const { target } = event;
+//     const num  = target.textContent;
+//     updateDisplay()
+// });
 
-clicked.addEventListener('click', event => {
-    const { target } = event;
-    const num  = target.textContent;
-    updateDisplay()
-});
+// function add(firstOperand, secondOperand) {
+//     console.log(firstOperand + secondOperand);
+// }
 
-function add(firstOperand, secondOperand) {
-    console.log(firstOperand + secondOperand);
-}
+// function subtract(firstOperand, secondOperand) {
+//     console.log(firstOperand - secondOperand);
+// }
 
-function subtract(firstOperand, secondOperand) {
-    console.log(firstOperand - secondOperand);
-}
+// function multiply(firstOperand, secondOperand) {
+//     console.log(firstOperand * secondOperand);
+// }
 
-function multiply(firstOperand, secondOperand) {
-    console.log(firstOperand * secondOperand);
-}
+// function divide(firstOperand, secondOperand) {
+//     console.log(firstOperand / secondOperand);
+// }
 
-function divide(firstOperand, secondOperand) {
-    console.log(firstOperand / secondOperand);
-}
+// function operate(firstOperand, secondOperand, operator) {
+//     if (operator === "+") {
+//         add(firstOperand, secondOperand);
+//     }
+//     else if (operator === "-") {
+//         subtract(firstOperand, secondOperand);
+//     }
+//     else if (operator === "*") {
+//         multiply(firstOperand, secondOperand);
+//     }
+//     else if (operator === "/") {
+//         divide(firstOperand, secondOperand);
+//     }
+// }
 
-function operate(firstOperand, secondOperand, operator) {
-    if (operator === "+") {
-        add(firstOperand, secondOperand);
-    }
-    else if (operator === "-") {
-        subtract(firstOperand, secondOperand);
-    }
-    else if (operator === "*") {
-        multiply(firstOperand, secondOperand);
-    }
-    else if (operator === "/") {
-        divide(firstOperand, secondOperand);
-    }
-}
+// function updateDisplay() {
+//     const display = document.querySelector('.answer');
+//     console.log(display)
+// }
 
-function updateDisplay() {
-    const display = document.querySelector('.answer');
-    console.log(display)
-}
+// function calculate() {
+// }
 
-function calculate() {
 
-}
+
+
