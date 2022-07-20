@@ -17,7 +17,6 @@ div {
     justify-content: center;
     align-items: center;
     font-size: 30px;
-
 }
 
 button {
@@ -47,15 +46,4 @@ button {
     border-radius: 5px;
     padding-right: 5px;
     /* background-color: rgb(240, 240, 240); */
-}
-
-.clear,
-.back {
-    height: 80px;
-    width: 400px;
-}
-
-.divide {
-    height: 80px;
-    width: 250px;
 }
