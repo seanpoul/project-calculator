@@ -25,6 +25,7 @@ button {
     justify-content: center;
     align-items: center;
     font-size: 30px;
+    /* background-color: lightgrey; */
 }
 
 .calculator {
@@ -46,6 +47,9 @@ button {
     padding-right: 5px;
 }
 
-.operators, #clear, #delete , #equal{
-    background-color: rgb(110, 110, 255) ;
+.operators,
+#clear,
+#delete,
+#equal {
+    background-color: rgb(110, 110, 255);
 }
