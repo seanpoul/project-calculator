@@ -7,7 +7,6 @@ body {
     height: 90vh;
     justify-content: center;
     align-items: center;
-    /* border: red solid 1px; */
 }
 
 div {
@@ -45,5 +44,8 @@ button {
     border: black solid 1px;
     border-radius: 5px;
     padding-right: 5px;
-    /* background-color: rgb(240, 240, 240); */
+}
+
+.operators, #clear, #delete , #equal{
+    background-color: rgb(110, 110, 255) ;
 }
