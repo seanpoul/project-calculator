@@ -7,19 +7,19 @@ const dot = document.getElementById('dot');
 
 const operators = ["+", "-", "*", "/"];
 
-let display 
+let display
 let previousValue = "";
 let currentValue = "";
 
 allButtons.forEach(button => {
     button.addEventListener('click', (event) => {
         let clickedValue = event.target.value;
-        
-        console.log(calcAnswer.textContent);
+        calcAnswer.textContent += clickedValue;
+        console.log(currentValue);
+
+        // console.log(calcAnswer.textContent);
         if (clickedValue.includes("+")) {
-            previousValue = calcAnswer.textContent
-            // console.log(previousValue)
-            // console.log(calcAnswer.textContent);
+            previousValue = calcAnswer.textContent.slice(0, -1)
             if (previousValue != "") {
 
                 currentValue += clickedValue;
@@ -29,7 +29,6 @@ allButtons.forEach(button => {
             }
         }
 
-        calcAnswer.textContent += clickedValue;
 
         if (clickedValue == "clear") {
             calcAnswer.textContent = "";
