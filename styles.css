@@ -66,12 +66,14 @@ button {
 #equal {
     display: flex;
     width: 700px;
+    background-color: lightseagreen;
 }
 
 #clear,
 #delete {
     display: flex;
     width: 510px;
+    background-color: chocolate;
 }
 
 .display {
@@ -80,4 +82,8 @@ button {
     height: 100px;
     border: black solid 1px;
     border-radius: 5px;
+}
+
+.operator {
+    background-color: lightskyblue;
 }
