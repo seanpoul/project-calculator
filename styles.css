@@ -7,6 +7,7 @@ body {
     height: 90vh;
     justify-content: center;
     align-items: center;
+    border: red solid 2px;
 }
 
 div {
@@ -25,7 +26,6 @@ button {
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    /* background-color: lightgrey; */
 }
 
 .calculator {
@@ -33,10 +33,22 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    border: blue solid 25px;
 }
 
-.answer {
+.previous {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 50px;
+    font-size: 40px;
+    border: black solid 1px;
+    border-radius: 5px;
+    padding-right: 5px;
+}
+
+.current {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -47,9 +59,13 @@ button {
     padding-right: 5px;
 }
 
-.operators,
-#clear,
-#delete,
 #equal {
-    background-color: rgb(110, 110, 255);
+    display: flex;
+    width: 700px;
+}
+
+#clear,
+#delete {
+    display: flex;
+    width: 510px;
 }

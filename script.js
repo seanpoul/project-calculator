@@ -1,53 +1,76 @@
 const calcAnswer = document.querySelector('.answer');
-const allButtons = document.querySelectorAll('button');
-// const operators = document.getElementsByClassName('operators');
-const clear = document.getElementById('clear');
-const equal = document.getElementById('equal');
-const dot = document.getElementById('dot');
+const numberButtons = document.querySelectorAll('.number');
+const operatorButtons = document.querySelectorAll('.operator');
+const clearBtn = document.getElementById('clear');
+const equalBtn = document.getElementById('equal');
+const deleteBtn = document.getElementById('delete');
 
 const operators = ["+", "-", "*", "/"];
 
-let display
 let previousValue = "";
 let currentValue = "";
 
-allButtons.forEach(button => {
+class Calculator {
+    constructor(previousValue, currentValue) {
+        this.previousValue = previousValue;
+        this.currentValue = currentValue;
+        this.clear();
+    }
+
+    clear() {
+        calcAnswer.textContent = "";
+        previousValue = "";
+        currentValue = "";
+    }
+
+    deleteNum() {
+        display = calcAnswer.textContent;
+        display = display.slice(0, -7);
+        calcAnswer.textContent = display;
+    }
+
+    appendNumber() {
+
+    }
+
+    chooseOperation() {
+
+    }
+
+    compute() {
+
+    }
+
+    updateDisplay() {
+        this.calcAnswer = currentValue;
+    }
+
+}
+
+const calculator = new Calculator(previousValue, currentValue)
+
+numberButtons.forEach(button => {
     button.addEventListener('click', (event) => {
-        let clickedValue = event.target.value;
-        calcAnswer.textContent += clickedValue;
-        console.log(currentValue);
-
-        // console.log(calcAnswer.textContent);
-        if (clickedValue.includes("+")) {
-            previousValue = calcAnswer.textContent.slice(0, -1)
-            if (previousValue != "") {
-
-                currentValue += clickedValue;
-                console.log(previousValue);
-                console.log(currentValue);
-                console.log(calcAnswer.textContent);
-            }
-        }
-
-
-        if (clickedValue == "clear") {
-            calcAnswer.textContent = "";
-            previousValue = "";
-            currentValue = "";
-        }
-        if (clickedValue == "delete") {
-            display = calcAnswer.textContent;
-            display = display.slice(0, -7);
-            calcAnswer.textContent = display;
-        }
-        if (clickedValue == ".") {
-            if (calcAnswer.textContent.includes(".")) {
-                button.disabled = true;
-            }
-        }
-        if (!(calcAnswer.textContent.includes("."))) {
-            dot.disabled = false;
-        }
+        calculator.appendNumber(button.value);
+        calculator.updateDisplay();
     })
 })
 
+
+
+// numberButtons.forEach(button => {
+//     button.addEventListener('click', (event) => {
+//         let clickedValue = event.target.value;
+//         if (clickedValue === "." && calcAnswer.textContent.includes(".")) return
+//         calcAnswer.textContent += clickedValue;
+//         if (clickedValue.includes("+")) {
+//             previousValue = calcAnswer.textContent.slice(0, -1)
+//             if (previousValue != "") {
+//                 currentValue += clickedValue;
+//                 console.log(previousValue);
+//                 console.log(currentValue);
+//                 console.log(calcAnswer.textContent);
+//             }
+//         }
+//     })
+// })
