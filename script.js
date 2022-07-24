@@ -1,76 +1,106 @@
-const calcAnswer = document.querySelector('.answer');
 const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operator');
-const clearBtn = document.getElementById('clear');
-const equalBtn = document.getElementById('equal');
-const deleteBtn = document.getElementById('delete');
-
-const operators = ["+", "-", "*", "/"];
-
-let previousValue = "";
-let currentValue = "";
+const clearBtn = document.querySelector('#clear');
+const equalBtn = document.querySelector('#equal');
+const deleteBtn = document.querySelector('#delete');
+const previousNum = document.querySelector('.previous');
+const currentNum = document.querySelector('.current');
 
 class Calculator {
-    constructor(previousValue, currentValue) {
-        this.previousValue = previousValue;
-        this.currentValue = currentValue;
+    constructor(previousNum, currentNum) {
+        this.previousNum = previousNum;
+        this.currentNum = currentNum;
         this.clear();
     }
 
     clear() {
-        calcAnswer.textContent = "";
-        previousValue = "";
-        currentValue = "";
+        this.previousOperand = "";
+        this.currentOperand = "";
+        this.operation = undefined;
+        this.previousNum.textContent = "";
     }
 
     deleteNum() {
-        display = calcAnswer.textContent;
-        display = display.slice(0, -7);
-        calcAnswer.textContent = display;
+        this.currentOperand = this.currentOperand.toString().slice(0, -1);
     }
 
-    appendNumber() {
-
+    appendNumber(number) {
+        if (number === "." && this.currentOperand.includes(".")) return
+        this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
-    chooseOperation() {
-
+    chooseOperation(operation) {
+        if (this.currentOperand === "") return
+        if (this.previousOperand !== "") {
+            this.compute();
+        }
+        this.operation = operation;
+        this.previousOperand = this.currentOperand;
+        this.currentOperand = "";
     }
 
     compute() {
-
+        let computation
+        const prev = parseFloat(this.previousOperand);
+        const curr = parseFloat(this.currentOperand);
+        if (isNaN(prev) || isNaN(curr)) return;
+        switch (this.operation) {
+            case '+':
+                computation = prev + curr;
+                break
+            case '-':
+                computation = prev - curr;
+                break
+            case '*':
+                computation = prev * curr;
+                break
+            case '/':
+                computation = prev / curr;
+                break
+            default:
+                return
+        }
+        this.currentOperand = computation;
+        this.operation = undefined;
+        this.previousOperand = "";
     }
 
     updateDisplay() {
-        this.calcAnswer = currentValue;
+        this.currentNum.textContent = this.currentOperand;
+        if (this.operation != null) {
+            this.previousNum.textContent = `${this.previousOperand} ${this.operation}`;
+        }
     }
 
 }
 
-const calculator = new Calculator(previousValue, currentValue)
+const calculator = new Calculator(previousNum, currentNum)
 
 numberButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-        calculator.appendNumber(button.value);
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.textContent);
         calculator.updateDisplay();
     })
 })
 
+operatorButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.textContent);
+        calculator.updateDisplay();
+    })
+})
 
+equalBtn.addEventListener('click', button => {
+    calculator.compute();
+    calculator.updateDisplay();
+})
 
-// numberButtons.forEach(button => {
-//     button.addEventListener('click', (event) => {
-//         let clickedValue = event.target.value;
-//         if (clickedValue === "." && calcAnswer.textContent.includes(".")) return
-//         calcAnswer.textContent += clickedValue;
-//         if (clickedValue.includes("+")) {
-//             previousValue = calcAnswer.textContent.slice(0, -1)
-//             if (previousValue != "") {
-//                 currentValue += clickedValue;
-//                 console.log(previousValue);
-//                 console.log(currentValue);
-//                 console.log(calcAnswer.textContent);
-//             }
-//         }
-//     })
-// })
+clearBtn.addEventListener('click', button => {
+    calculator.clear();
+    calculator.updateDisplay();
+})
+
+deleteBtn.addEventListener('click', button => {
+    calculator.deleteNum();
+    calculator.updateDisplay();
+})
